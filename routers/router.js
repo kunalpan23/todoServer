@@ -1,6 +1,10 @@
 const dbController = require('../dbUtils/dbController');
 const router = require('express').Router();
 
+router.get('/', (req, res) => {
+	res.send({ status: 200, message: 'Server Up' }).status(200);
+});
+
 /* Fet All todo's from the DB */
 router.get('/getAllTodo', dbController.getAllTodo);
 
