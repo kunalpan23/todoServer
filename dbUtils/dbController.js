@@ -15,6 +15,7 @@ module.exports = {
 			.catch((err) => sendErrorWithStatus(res, err?.status));
 	},
 	addTodo(req, res) {
+		console.log(req.query);
 		const newTodo = new TodoModel(req.query);
 		newTodo.save((err, data) => {
 			if (err) return sendErrorWithStatus(res, err?.status);
