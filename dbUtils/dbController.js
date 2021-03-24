@@ -46,8 +46,7 @@ module.exports = {
 		});
 	},
 	removeTodo(req, res) {
-		const {id} = req.query;
-		console.log(req.query);
+		const {id} = req.query; 
 		TodoModel.findByIdAndRemove(id, function(err,docs){
 			if(err) return sendErrorWithStatus(res, err?.status);
 			
