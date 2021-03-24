@@ -14,4 +14,7 @@ router.post('/addTodo', dbController.addTodo);
 /* Update todo by ID */
 router.post('/updateTodo', dbController.updateTodo);
 
+/* Delete Todo */
+router.post('/deleteTodo', dbController.removeTodo);
+
 module.exports = router;
