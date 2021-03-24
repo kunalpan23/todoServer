@@ -29,7 +29,7 @@ module.exports = {
 		TodoModel.findById(id, (err, foundData) => {
 			if (err) return sendErrorWithStatus(res, err?.status);
 
-			const { updateHistory } = foundData;
+			const updateHistory  = foundData?.updateHistory;
 
 			if (!!edited && Array.isArray(updateHistory)) {
 				updateHistory.push(edited);
