@@ -24,12 +24,12 @@ module.exports = {
 		});
 	},
 	updateTodo(req, res) {
-		const { id, edited } = req.query;
+		const { id, edited, completed } = req.query;
 
 		TodoModel.findById(id, (err, foundData) => {
 			if (err) return sendErrorWithStatus(res, err?.status);
 
-			const { updateHistory, completed } = foundData;
+			const { updateHistory } = foundData;
 
 			if (!!edited && Array.isArray(updateHistory)) {
 				updateHistory.push(edited);
